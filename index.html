@@ -8,7 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Noto+Sans+Ethiopic:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Noto+Sans+Ethiopic:wght@400;600;700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -45,46 +45,46 @@
     .hide-scrollbar::-webkit-scrollbar { display: none; }
     .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     .bg-food-pattern {
-      background-image: radial-gradient(circle at center, rgba(8, 11, 17, 0.90), rgba(8, 11, 17, 0.98)), url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1600&q=80');
+      background-image: radial-gradient(circle at center, rgba(8, 11, 17, 0.92), rgba(8, 11, 17, 0.98)), url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1600&q=80');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
     }
   </style>
 </head>
-<body class="bg-food-pattern text-[#F3F4F6] min-h-screen selection:bg-brand-gold selection:text-black relative overflow-x-hidden">
+<body class="bg-food-pattern text-slate-100 min-h-screen selection:bg-brand-gold selection:text-black relative overflow-x-hidden">
 
   <!-- ================= TOP NAVIGATION ================= -->
-  <nav class="sticky top-0 z-50 glass bg-gray-900/95 border-b border-brand-gold/20 px-4 py-3 flex items-center justify-between">
+  <nav class="sticky top-0 z-50 glass bg-gray-950/95 border-b border-brand-gold/30 px-4 py-3 flex items-center justify-between">
     <div class="flex items-center space-x-3 cursor-pointer" onclick="navigateTo('page1')">
       <div class="w-10 h-10 rounded-2xl gold-btn flex items-center justify-center shadow-lg shadow-brand-gold/20 font-serif font-black text-2xl tracking-tighter">
         M
       </div>
       <div>
         <h1 id="navBrandTitle" class="text-xl font-black font-serif tracking-wider gold-text uppercase leading-none">MIJUU</h1>
-        <span id="navSubtitle" class="text-[9px] text-gray-400 tracking-widest uppercase block mt-0.5">Nyaata Aadaa fi Ammayyaa</span>
+        <span id="navSubtitle" class="text-[10px] text-slate-300 font-semibold tracking-wider uppercase block mt-0.5">Nyaata Aadaa fi Ammayyaa</span>
       </div>
     </div>
 
     <!-- Actions -->
     <div class="flex items-center space-x-2">
-      <button onclick="toggleQRModal()" title="QR Code" class="p-2 rounded-xl bg-brand-gold/15 text-brand-gold border border-brand-gold/30 hover:bg-brand-gold/25 transition">
+      <button onclick="toggleQRModal()" title="QR Code" class="p-2 rounded-xl bg-brand-gold/20 text-brand-gold border border-brand-gold/40 hover:bg-brand-gold/30 transition">
         <i data-lucide="qr-code" class="w-4 h-4"></i>
       </button>
 
-      <select id="langSelect" onchange="changeLanguage(this.value)" class="bg-brand-accent text-brand-gold text-xs font-bold border border-brand-gold/30 rounded-xl px-2 py-1.5 focus:outline-none cursor-pointer">
+      <select id="langSelect" onchange="changeLanguage(this.value)" class="bg-brand-accent text-brand-gold text-xs font-bold border border-brand-gold/40 rounded-xl px-2.5 py-1.5 focus:outline-none cursor-pointer">
         <option value="om">Afaan Oromoo</option>
         <option value="am">አማርኛ</option>
         <option value="en">English</option>
       </select>
 
       <!-- Waitstaff Portal (PIN: 4548) -->
-      <button onclick="openWaitstaffModal()" title="Waitstaff Portal" class="p-2 rounded-xl bg-blue-500/15 text-blue-400 border border-blue-500/30 hover:bg-blue-500/25 transition">
+      <button onclick="openWaitstaffModal()" title="Waitstaff Portal" class="p-2 rounded-xl bg-blue-500/20 text-blue-300 border border-blue-500/40 hover:bg-blue-500/30 transition">
         <i data-lucide="clipboard-list" class="w-4 h-4"></i>
       </button>
 
       <!-- Owner Control (PIN: 0950) -->
-      <button onclick="openOwnerModal()" title="Owner Control" class="p-2 rounded-xl bg-brand-gold/15 text-brand-gold border border-brand-gold/30 hover:bg-brand-gold/25 transition">
+      <button onclick="openOwnerModal()" title="Owner Control" class="p-2 rounded-xl bg-brand-gold/20 text-brand-gold border border-brand-gold/40 hover:bg-brand-gold/30 transition">
         <i data-lucide="shield-check" class="w-4 h-4"></i>
       </button>
     </div>
@@ -92,21 +92,21 @@
 
   <!-- ================= PAGE 1: SIMANNAA (HERO WELCOME) ================= -->
   <section id="page1" class="min-h-[85vh] flex flex-col justify-center items-center text-center px-4 relative">
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass bg-gray-900/70 border border-brand-gold/40 text-brand-gold text-xs font-bold tracking-widest uppercase mb-6 animate-pulse">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass bg-gray-900/90 border border-brand-gold/50 text-brand-gold text-xs font-bold tracking-widest uppercase mb-6 animate-pulse">
       <i data-lucide="sparkles" class="w-4 h-4"></i>
       <span id="p1-badge">Dhandhama Addaa & Mi'aawaa</span>
     </div>
 
-    <h1 id="heroTitle" class="text-4xl sm:text-6xl font-black font-serif tracking-tight leading-tight max-w-3xl mb-5">
+    <h1 id="heroTitle" class="text-4xl sm:text-6xl font-black font-serif tracking-tight leading-tight max-w-3xl mb-5 text-white">
       Baga Nagaan Gara <br/><span class="gold-text">Mana Nyaataa MIJUU</span> Dhuftan!
     </h1>
 
-    <p id="heroDesc" class="text-gray-300 text-sm sm:text-base max-w-2xl font-light leading-relaxed mb-8">
+    <p id="heroDesc" class="text-slate-200 text-sm sm:text-base max-w-2xl font-normal leading-relaxed mb-8">
       Qulqullina aadaa fi dhandhama ammayyaa bakka tokkotti walitti finneerra. Dhandhama qulqulluu qalbii keessan gammachiisu asitti filadhaatii gammadaa!
     </p>
 
     <div class="w-full max-w-xs z-20">
-      <button onclick="startOrder()" class="w-full py-4 rounded-2xl gold-btn text-xs uppercase tracking-widest shadow-2xl shadow-brand-gold/30 hover:scale-105 active:scale-95 transition flex items-center justify-center gap-3">
+      <button onclick="startOrder()" class="w-full py-4 rounded-2xl gold-btn text-xs uppercase tracking-widest shadow-2xl shadow-brand-gold/40 hover:scale-105 active:scale-95 transition flex items-center justify-center gap-3">
         <span id="p1-btn">AJAJACHUU JALQABI</span>
         <i data-lucide="arrow-right" class="w-5 h-5"></i>
       </button>
@@ -116,16 +116,16 @@
   <!-- ================= PAGE 2: GOSOOTA NYAATAA ================= -->
   <section id="page2" class="hidden max-w-6xl mx-auto px-4 py-8">
     <div class="text-center mb-6">
-      <button onclick="navigateTo('page1')" class="text-xs text-gray-400 hover:text-white flex items-center gap-1 mx-auto mb-2">
+      <button onclick="navigateTo('page1')" class="text-xs text-slate-300 hover:text-white flex items-center gap-1 mx-auto mb-2 font-semibold">
         <i data-lucide="chevron-left" class="w-4 h-4"></i> <span id="txt-back-home">Gara Fuula Jalqabaatti</span>
       </button>
       <h2 id="p2-title" class="text-3xl font-extrabold text-white font-serif">Gosoota Nyaataa & Dhugaatii</h2>
-      <p id="p2-subtitle" class="text-xs text-gray-400 mt-1">Gosa nyaataa barbaadde filadhuutii keessa seenaa</p>
+      <p id="p2-subtitle" class="text-xs text-slate-300 mt-1">Gosa nyaataa barbaadde filadhuutii keessa seenaa</p>
     </div>
 
     <div class="max-w-md mx-auto mb-8 relative flex items-center">
-      <i data-lucide="search" class="w-4 h-4 absolute left-4 text-gray-400"></i>
-      <input type="text" id="catSearch" oninput="renderCategories()" placeholder="Gosa nyaataa barbaadi..." class="w-full bg-brand-card/90 border border-brand-gold/20 rounded-2xl py-3 pl-11 pr-4 text-xs text-white focus:outline-none focus:border-brand-gold">
+      <i data-lucide="search" class="w-4 h-4 absolute left-4 text-slate-400"></i>
+      <input type="text" id="catSearch" oninput="renderCategories()" placeholder="Gosa nyaataa barbaadi..." class="w-full bg-brand-card/95 border border-brand-gold/30 rounded-2xl py-3 pl-11 pr-4 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-brand-gold">
     </div>
 
     <div id="categoryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
@@ -139,12 +139,12 @@
           <i data-lucide="chevron-left" class="w-4 h-4"></i> <span id="txt-back-cat">Gara Gosoota Nyaataatti</span>
         </button>
         <h2 id="selectedCatTitle" class="text-2xl font-black text-white font-serif"></h2>
-        <p id="selectedCatDesc" class="text-xs text-gray-400 mt-0.5"></p>
+        <p id="selectedCatDesc" class="text-xs text-slate-300 mt-0.5"></p>
       </div>
 
       <div class="relative w-full sm:w-72 flex items-center">
-        <i data-lucide="search" class="w-4 h-4 absolute left-4 text-gray-400"></i>
-        <input type="text" id="dishSearch" oninput="renderDishes()" placeholder="Nyaata gosa kanaa barbaadi..." class="w-full bg-brand-card/90 border border-brand-gold/25 rounded-2xl py-2.5 pl-11 pr-4 text-xs text-white focus:outline-none focus:border-brand-gold">
+        <i data-lucide="search" class="w-4 h-4 absolute left-4 text-slate-400"></i>
+        <input type="text" id="dishSearch" oninput="renderDishes()" placeholder="Nyaata gosa kanaa barbaadi..." class="w-full bg-brand-card/95 border border-brand-gold/30 rounded-2xl py-2.5 pl-11 pr-4 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-brand-gold">
       </div>
     </div>
 
@@ -152,13 +152,13 @@
   </section>
 
   <!-- ================= FLOATING TRAY BAR ================= -->
-  <div id="trayBar" class="fixed bottom-4 left-4 right-4 max-w-md mx-auto glass bg-gray-900/95 p-3.5 rounded-2xl shadow-2xl hidden items-center justify-between z-50 border border-brand-gold/30">
+  <div id="trayBar" class="fixed bottom-4 left-4 right-4 max-w-md mx-auto glass bg-gray-950/95 p-3.5 rounded-2xl shadow-2xl hidden items-center justify-between z-50 border border-brand-gold/40">
     <div class="flex items-center space-x-3 cursor-pointer" onclick="openOrderSummary()">
       <div class="w-10 h-10 rounded-xl gold-btn flex items-center justify-center font-bold">
         <i data-lucide="receipt" class="w-5 h-5 text-brand-dark"></i>
       </div>
       <div>
-        <p class="text-[11px] text-gray-400 font-medium" id="txt-cart-title">Waan filatame:</p>
+        <p class="text-[11px] text-slate-300 font-semibold" id="txt-cart-title">Waan filatame:</p>
         <p class="text-sm font-extrabold text-white"><span id="cartCount">0</span> <span id="txtItemWord">qooda</span> • <span id="cartTotal" class="gold-text">0.00</span> ETB</p>
       </div>
     </div>
@@ -171,19 +171,19 @@
   <div id="lightboxModal" class="fixed inset-0 bg-black/95 z-50 hidden flex items-center justify-center p-4 cursor-pointer" onclick="closeLightbox()">
     <button class="absolute top-4 right-4 text-white text-3xl font-bold">✕</button>
     <div class="max-w-4xl max-h-[85vh] text-center" onclick="event.stopPropagation()">
-      <img id="lightboxImg" src="" alt="Food Preview" class="w-full max-h-[75vh] object-contain rounded-2xl shadow-2xl border border-brand-gold/30">
+      <img id="lightboxImg" src="" alt="Food Preview" class="w-full max-h-[75vh] object-contain rounded-2xl shadow-2xl border border-brand-gold/40">
       <h3 id="lightboxCaption" class="text-lg font-bold text-white mt-3 font-serif"></h3>
     </div>
   </div>
 
-  <!-- ================= MODAL: INGREDIENT SELECTOR ================= -->
+  <!-- ================= MODAL: INGREDIENT SELECTOR (NO ALLERGY WORD) ================= -->
   <div id="allergyModal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
-    <div class="bg-brand-card border border-brand-gold/30 rounded-3xl max-w-sm w-full p-5 shadow-2xl">
+    <div class="bg-brand-card border border-brand-gold/40 rounded-3xl max-w-sm w-full p-5 shadow-2xl">
       <h4 class="text-sm font-extrabold text-white mb-1" id="lblAllergyHead">Qabiyyee Nyaataa Filadhaa:</h4>
-      <p class="text-xs text-gray-400 mb-3" id="lblAllergySub">Waan keessatti hin barbaanne irraa haquu dandeessu:</p>
+      <p class="text-xs text-slate-300 mb-3" id="lblAllergySub">Waan keessatti hin barbaanne irraa haquu dandeessu:</p>
       <div id="allergyChecklist" class="space-y-2 mb-4 text-xs"></div>
       <div class="flex gap-2">
-        <button onclick="closeModal('allergyModal')" class="flex-1 py-2 rounded-xl bg-gray-800 text-gray-300 font-bold text-xs" id="btnCancelAllergy">Dhiisi</button>
+        <button onclick="closeModal('allergyModal')" class="flex-1 py-2 rounded-xl bg-gray-800 text-slate-200 font-bold text-xs" id="btnCancelAllergy">Dhiisi</button>
         <button onclick="confirmCustomizedOrder()" class="flex-1 py-2 rounded-xl gold-btn text-xs font-black" id="btnAddAllergy">+ Dabali</button>
       </div>
     </div>
@@ -191,8 +191,8 @@
 
   <!-- ================= MODAL: ORDER SUMMARY & BANK PAYMENT ================= -->
   <div id="orderModal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
-    <div class="bg-brand-card border border-brand-gold/30 rounded-3xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-6 shadow-2xl relative hide-scrollbar">
-      <button onclick="closeModal('orderModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white">✕</button>
+    <div class="bg-brand-card border border-brand-gold/40 rounded-3xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-6 shadow-2xl relative hide-scrollbar">
+      <button onclick="closeModal('orderModal')" class="absolute top-4 right-4 text-slate-400 hover:text-white">✕</button>
 
       <div class="text-center mb-5">
         <span class="text-[10px] font-bold text-brand-gold tracking-widest uppercase">Mana Nyaataa MIJUU</span>
@@ -201,7 +201,7 @@
 
       <div id="cartItemsList" class="divide-y divide-gray-800 mb-4 border-y border-gray-800 py-2"></div>
 
-      <div class="space-y-1.5 text-xs text-gray-300 mb-5 bg-brand-dark/70 p-4 rounded-2xl border border-white/5">
+      <div class="space-y-1.5 text-xs text-slate-200 mb-5 bg-brand-dark/80 p-4 rounded-2xl border border-white/10">
         <div class="flex justify-between"><span id="lblSubtotal">Gatii Nyaataa:</span> <span id="billSubtotal" class="font-bold text-white">0 ETB</span></div>
         <div class="flex justify-between"><span id="lblService">Tajaajila:</span> <span class="font-bold text-green-400" id="lblFree">Bilaasha (0%)</span></div>
         <div class="flex justify-between pt-2 border-t border-gray-800 text-sm font-black text-white">
@@ -216,20 +216,20 @@
       </div>
 
       <!-- 2. BANK DETAILS -->
-      <div id="bankDetailsCard" class="hidden bg-brand-dark p-4 rounded-2xl border border-brand-gold/40 mb-4">
+      <div id="bankDetailsCard" class="hidden bg-brand-dark p-4 rounded-2xl border border-brand-gold/50 mb-4">
         <div class="flex items-center justify-between mb-2">
           <span id="bankNameDisplay" class="font-black text-brand-gold text-sm"></span>
-          <span class="text-[10px] px-2 py-0.5 rounded bg-green-500/20 text-green-400 font-bold" id="lblVerified">Mirkanaa'e</span>
+          <span class="text-[10px] px-2 py-0.5 rounded bg-green-500/20 text-green-300 font-bold" id="lblVerified">Mirkanaa'e</span>
         </div>
         <div class="space-y-1.5 text-xs">
-          <p class="text-gray-400"><span id="lblAccOwner">Abbaa Herregaa:</span> <span id="bankOwnerDisplay" class="text-white font-bold"></span></p>
+          <p class="text-slate-300"><span id="lblAccOwner">Abbaa Herregaa:</span> <span id="bankOwnerDisplay" class="text-white font-bold"></span></p>
           <div class="flex items-center justify-between bg-brand-card p-2 rounded-xl">
             <span id="bankAccDisplay" class="font-mono text-sm text-yellow-300 font-extrabold tracking-wider"></span>
             <button onclick="copyAccount()" class="text-[11px] text-brand-gold font-bold flex items-center gap-1 hover:underline">
               <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy
             </button>
           </div>
-          <p class="text-gray-400 pt-1"><span id="lblAmountDue">Haga Kaffalamu:</span> <span id="bankAmountDisplay" class="font-black text-white"></span></p>
+          <p class="text-slate-300 pt-1"><span id="lblAmountDue">Haga Kaffalamu:</span> <span id="bankAmountDisplay" class="font-black text-white"></span></p>
         </div>
 
         <button onclick="openVerificationStep()" class="mt-4 w-full py-3 rounded-xl gold-btn text-xs uppercase tracking-wider">
@@ -238,7 +238,7 @@
       </div>
 
       <!-- 3. VERIFICATION -->
-      <div id="verifySection" class="hidden bg-brand-accent/50 p-4 rounded-2xl border border-blue-500/30">
+      <div id="verifySection" class="hidden bg-brand-accent/60 p-4 rounded-2xl border border-blue-500/40">
         <h5 class="text-xs font-bold text-white mb-2" id="lblVerifyTitle">Mirkaneessa Kaffaltii:</h5>
         <input type="text" id="txIdInput" placeholder="Koodii Dambalii (Transaction Code / SMS)" class="w-full bg-brand-card border border-gray-700 rounded-xl p-2.5 text-xs text-white mb-2 font-mono">
         <input type="text" id="payerNameInput" placeholder="Maqaa Nama Ergee (Sender Name)" class="w-full bg-brand-card border border-gray-700 rounded-xl p-2.5 text-xs text-white mb-3">
@@ -253,17 +253,17 @@
           <i data-lucide="check-circle" class="w-10 h-10"></i>
         </div>
         <h4 class="text-xl font-bold text-white font-serif mb-1" id="txt-paid-success">Kaffaltiin Milkaa'eera!</h4>
-        <p class="text-xs text-gray-300 max-w-sm mx-auto mb-2 leading-relaxed" id="txt-post-meal-thanks">
+        <p class="text-xs text-slate-200 max-w-sm mx-auto mb-2 leading-relaxed" id="txt-post-meal-thanks">
           Waan mana nyaata keenya MIJUU keessatti nyaattanii fi nu filattaniif baay'ee galatoomaa!
         </p>
         <p class="text-sm font-extrabold text-brand-gold mb-4" id="txt-time-greeting">
           Guyyaa Gaarii Isiniif Haa Ta'u!
         </p>
 
-        <div class="bg-brand-dark p-3 rounded-xl text-xs text-left max-w-xs mx-auto mb-4 border border-white/5 space-y-1">
-          <p class="text-gray-400">Ref Code: <span id="receiptRef" class="text-yellow-400 font-mono font-bold"></span></p>
-          <p class="text-gray-400">Haga Kaffalame: <span id="receiptPaid" class="text-white font-bold"></span></p>
-          <p class="text-gray-400">Status: <span class="text-green-400 font-bold">Approved & Verified</span></p>
+        <div class="bg-brand-dark p-3 rounded-xl text-xs text-left max-w-xs mx-auto mb-4 border border-white/10 space-y-1">
+          <p class="text-slate-300">Ref Code: <span id="receiptRef" class="text-yellow-400 font-mono font-bold"></span></p>
+          <p class="text-slate-300">Haga Kaffalame: <span id="receiptPaid" class="text-white font-bold"></span></p>
+          <p class="text-slate-300">Status: <span class="text-green-400 font-bold">Approved & Verified</span></p>
         </div>
         <button onclick="resetOrder()" class="px-6 py-2.5 rounded-xl gold-btn text-brand-dark font-black text-xs uppercase">
           <span id="btnNewMenu">Menu Haaraa Bani</span>
@@ -280,11 +280,11 @@
           <i data-lucide="clipboard-list" class="w-5 h-5 text-blue-400"></i>
           <h3 class="font-bold text-white text-sm">Fuula Keessummeessitootaa (Waitstaff Portal)</h3>
         </div>
-        <button onclick="closeModal('waitstaffModal')" class="text-gray-400 hover:text-white">✕</button>
+        <button onclick="closeModal('waitstaffModal')" class="text-slate-400 hover:text-white">✕</button>
       </div>
 
       <div id="waitstaffAuth" class="py-8 text-center">
-        <p class="text-xs text-gray-400 mb-3">Password Keessummeessitootaa Galchaa:</p>
+        <p class="text-xs text-slate-300 mb-3">Password Keessummeessitootaa Galchaa:</p>
         <input type="password" id="waitstaffPinInput" placeholder="••••" class="bg-brand-dark border border-gray-700 rounded-xl p-2.5 text-center text-sm text-white mb-3 font-mono tracking-widest w-40 block mx-auto">
         <button onclick="checkWaitstaffPin()" class="px-6 py-2 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-xl">Seeni</button>
       </div>
@@ -292,15 +292,15 @@
       <div id="waitstaffDashboard" class="hidden flex-1 overflow-y-auto pt-3 hide-scrollbar space-y-4">
         <div class="grid grid-cols-4 gap-1 p-1 bg-brand-dark rounded-xl text-center text-[11px] font-bold">
           <button onclick="switchWaitstaffTab('orders')" id="wsTabBtnOrders" class="py-2 rounded-lg bg-blue-600 text-white">Ajajawwan</button>
-          <button onclick="switchWaitstaffTab('pos')" id="wsTabBtnPos" class="py-2 rounded-lg text-gray-400 hover:text-white">POS / Kalkuleetara</button>
-          <button onclick="switchWaitstaffTab('ledger')" id="wsTabBtnLedger" class="py-2 rounded-lg text-gray-400 hover:text-white">Mallaqa Har'aa</button>
-          <button onclick="switchWaitstaffTab('scanner')" id="wsTabBtnScanner" class="py-2 rounded-lg text-gray-400 hover:text-white">Camera Scanner</button>
+          <button onclick="switchWaitstaffTab('pos')" id="wsTabBtnPos" class="py-2 rounded-lg text-slate-400 hover:text-white">POS / Kalkuleetara</button>
+          <button onclick="switchWaitstaffTab('ledger')" id="wsTabBtnLedger" class="py-2 rounded-lg text-slate-400 hover:text-white">Mallaqa Har'aa</button>
+          <button onclick="switchWaitstaffTab('scanner')" id="wsTabBtnScanner" class="py-2 rounded-lg text-slate-400 hover:text-white">Camera Scanner</button>
         </div>
 
         <!-- 1. Live Orders View -->
         <div id="wsTabOrders" class="space-y-3">
           <div class="flex justify-between items-center bg-brand-dark p-2.5 rounded-xl text-xs">
-            <span class="text-gray-400">Ajajawwan Ammaa:</span>
+            <span class="text-slate-300">Ajajawwan Ammaa:</span>
             <span id="liveOrderCount" class="font-black text-blue-400">0</span>
           </div>
           <div id="waitstaffOrdersList" class="space-y-2 text-xs"></div>
@@ -322,10 +322,10 @@
 
           <div class="bg-brand-dark p-3 rounded-2xl border border-gray-800 space-y-2">
             <div class="flex justify-between text-xs font-bold">
-              <span class="text-gray-400">Ida'ama Herregaa:</span>
+              <span class="text-slate-300">Ida'ama Herregaa:</span>
               <span id="wsPosTotal" class="text-blue-400 font-mono text-base">0.00 ETB</span>
             </div>
-            <div id="wsPosSelectedItems" class="text-[11px] text-gray-300 max-h-20 overflow-y-auto space-y-1"></div>
+            <div id="wsPosSelectedItems" class="text-[11px] text-slate-200 max-h-20 overflow-y-auto space-y-1"></div>
             <div class="flex gap-2 pt-2">
               <button onclick="clearWsPos()" class="flex-1 py-2 rounded-xl bg-red-500/20 text-red-400 font-bold text-xs">Haqi</button>
               <button onclick="saveWsPosToDailyLedger()" class="flex-1 py-2 rounded-xl bg-blue-600 text-white font-bold text-xs">+ Mallaqa Har'aatti Kuusi</button>
@@ -336,13 +336,13 @@
         <!-- 3. Daily Ledger -->
         <div id="wsTabLedger" class="hidden space-y-3 text-xs">
           <div class="bg-brand-dark p-3 rounded-2xl border border-gray-800 flex justify-between items-center">
-            <span class="text-gray-300 font-bold">Waliigala Mallaqa Har'aa:</span>
+            <span class="text-slate-200 font-bold">Waliigala Mallaqa Har'aa:</span>
             <span id="wsDailyTotalSum" class="text-green-400 font-black text-base font-mono">0.00 ETB</span>
           </div>
 
           <div class="bg-brand-dark p-3 rounded-2xl border border-gray-800 space-y-2">
             <span class="font-bold text-brand-gold block">Suuraa Nagahee / SMS Kaffaltii Kaasi:</span>
-            <input type="file" id="receiptCamInput" accept="image/*" capture="environment" onchange="handleReceiptCapture(event)" class="text-gray-400 text-xs w-full">
+            <input type="file" id="receiptCamInput" accept="image/*" capture="environment" onchange="handleReceiptCapture(event)" class="text-slate-300 text-xs w-full">
             <div id="receiptPreviewBox" class="hidden pt-2">
               <img id="receiptPreviewImg" src="" class="h-28 rounded-xl object-contain border border-gray-700">
               <div class="flex gap-2 mt-2">
@@ -354,12 +354,12 @@
           <div id="wsLedgerHistory" class="space-y-1.5 max-h-40 overflow-y-auto"></div>
         </div>
 
-        <!-- 4. Camera Live QR Scanner -->
+        <!-- 4. Back Camera Live QR Scanner -->
         <div id="wsTabScanner" class="hidden space-y-3 text-xs">
-          <p class="text-gray-400">QR / Barcode Nagahee kaffaltii bilbila maamilarraa scan godhaa:</p>
+          <p class="text-slate-300">Kaameraa duubaatiin (Back Camera) QR nagahee kaffaltii scan godhaa:</p>
           <div id="qr-reader" class="w-full bg-brand-dark rounded-2xl overflow-hidden border border-gray-800"></div>
           <div id="qrScanResult" class="hidden bg-brand-dark p-3 rounded-2xl border border-green-500/40 text-center space-y-2">
-            <p class="text-gray-300">Wanti Scan ta'e: <span id="qrScanResultText" class="font-mono text-brand-gold font-bold break-all"></span></p>
+            <p class="text-slate-200">Wanti Scan ta'e: <span id="qrScanResultText" class="font-mono text-brand-gold font-bold break-all"></span></p>
             <div class="flex gap-2 justify-center">
               <a id="qrScanResultLink" href="#" target="_blank" class="px-4 py-1.5 bg-green-600 text-white font-bold rounded-xl text-xs">Linkii Bani (Open)</a>
               <button onclick="saveScanToLedger()" class="px-4 py-1.5 bg-blue-600 text-white font-bold rounded-xl text-xs">Mallaqa Kuusi</button>
@@ -373,7 +373,7 @@
   <!-- ================= MODAL: OWNER MASTER CONTROL (PIN: 0950) ================= -->
   <div id="ownerModal" class="fixed inset-0 bg-black/95 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
     <div class="bg-brand-card border border-brand-gold/40 rounded-3xl max-w-xl w-full max-h-[92vh] overflow-y-auto p-6 shadow-2xl relative hide-scrollbar">
-      <button onclick="closeModal('ownerModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white">✕</button>
+      <button onclick="closeModal('ownerModal')" class="absolute top-4 right-4 text-slate-400 hover:text-white">✕</button>
       
       <div class="flex items-center gap-2 mb-4">
         <i data-lucide="shield-check" class="w-6 h-6 text-brand-gold"></i>
@@ -381,7 +381,7 @@
       </div>
 
       <div id="ownerAuthSection" class="py-4">
-        <p class="text-xs text-gray-400 mb-3">Koodii Icciitii Abbaa Qabeenyaa:</p>
+        <p class="text-xs text-slate-300 mb-3">Koodii Icciitii Abbaa Qabeenyaa:</p>
         <div class="flex gap-2">
           <input type="password" id="ownerPinInput" placeholder="••••" class="flex-1 bg-brand-dark border border-gray-700 rounded-xl p-2.5 text-xs text-white text-center font-mono tracking-widest">
           <button onclick="checkOwnerPin()" class="px-5 py-2.5 gold-btn rounded-xl font-bold text-xs">Seeni</button>
@@ -389,10 +389,11 @@
       </div>
 
       <div id="ownerDashboard" class="hidden space-y-5 text-xs">
-        <div class="grid grid-cols-3 gap-1 p-1 bg-brand-dark rounded-xl text-center text-[11px] font-bold">
-          <button onclick="switchOwnerTab('dishes')" id="ownerTabBtnDishes" class="py-2 rounded-lg bg-brand-gold text-brand-dark">Nyaata & Dhugaatii</button>
-          <button onclick="switchOwnerTab('categories')" id="ownerTabBtnCategories" class="py-2 rounded-lg text-gray-400 hover:text-white">Gosoota (Categories)</button>
-          <button onclick="switchOwnerTab('general')" id="ownerTabBtnGeneral" class="py-2 rounded-lg text-gray-400 hover:text-white">Barreeffama & PIN</button>
+        <div class="grid grid-cols-4 gap-1 p-1 bg-brand-dark rounded-xl text-center text-[10px] font-bold">
+          <button onclick="switchOwnerTab('dishes')" id="ownerTabBtnDishes" class="py-2 rounded-lg bg-brand-gold text-brand-dark">Nyaata</button>
+          <button onclick="switchOwnerTab('categories')" id="ownerTabBtnCategories" class="py-2 rounded-lg text-slate-300 hover:text-white">Gosoota</button>
+          <button onclick="switchOwnerTab('banks')" id="ownerTabBtnBanks" class="py-2 rounded-lg text-slate-300 hover:text-white">Baankilee</button>
+          <button onclick="switchOwnerTab('general')" id="ownerTabBtnGeneral" class="py-2 rounded-lg text-slate-300 hover:text-white">Barreeffama/PIN</button>
         </div>
 
         <!-- 1. Dishes Master Control -->
@@ -405,8 +406,8 @@
             <input type="number" id="newDishPrice" placeholder="Gatii (ETB)" class="w-full bg-brand-card border border-gray-700 rounded-xl p-2 text-white mb-2">
             <input type="text" id="newDishIngredients" placeholder="Qabiyyee (komaadhaan adda baasi)" class="w-full bg-brand-card border border-gray-700 rounded-xl p-2 text-white mb-2">
             
-            <label class="block text-gray-400 mb-1">Suuraa Upload Godhaa:</label>
-            <input type="file" id="dishImageFile" accept="image/*" class="w-full text-gray-400 text-xs mb-2">
+            <label class="block text-slate-300 mb-1">Suuraa Upload Godhaa:</label>
+            <input type="file" id="dishImageFile" accept="image/*" class="w-full text-slate-300 text-xs mb-2">
 
             <select id="newDishCategory" class="w-full bg-brand-card border border-gray-700 rounded-xl p-2 text-white mb-2">
               <option value="ciree">Ciree (Breakfast)</option>
@@ -434,7 +435,23 @@
           </div>
         </div>
 
-        <!-- 3. General & PIN Control -->
+        <!-- 3. Banks Master Control (NEW: Full Editability for Banks) -->
+        <div id="ownerTabBanks" class="hidden space-y-4">
+          <div class="bg-brand-dark p-4 rounded-2xl border border-gray-800">
+            <h4 class="font-bold text-brand-gold mb-2">+ Baankii Haaraa Dabalaa:</h4>
+            <input type="text" id="newBankName" placeholder="Maqaa Baankichaa (fkn: Telebirr, CBE...)" class="w-full bg-brand-card border border-gray-700 rounded-xl p-2 text-white mb-2">
+            <input type="text" id="newBankOwner" placeholder="Maqaa Abbaa Herregaa" class="w-full bg-brand-card border border-gray-700 rounded-xl p-2 text-white mb-2">
+            <input type="text" id="newBankAcc" placeholder="Lakkoofsa Herregaa (Account Number)" class="w-full bg-brand-card border border-gray-700 rounded-xl p-2 text-white font-mono mb-2">
+            <button onclick="ownerAddBank()" class="w-full py-2.5 rounded-xl gold-btn font-bold text-xs uppercase">+ Baankii Dabali</button>
+          </div>
+
+          <div class="bg-brand-dark p-4 rounded-2xl border border-gray-800">
+            <h4 class="font-bold text-brand-gold mb-2">Baankilee Jiran Edit Godhaa / Balleessaa:</h4>
+            <div id="ownerBanksList" class="space-y-2 max-h-56 overflow-y-auto pr-1"></div>
+          </div>
+        </div>
+
+        <!-- 4. General & PIN Control -->
         <div id="ownerTabGeneral" class="hidden space-y-4">
           <div class="bg-brand-dark p-4 rounded-2xl border border-red-500/30">
             <h4 class="font-bold text-red-400 mb-2">PIN Abbaa Qabeenyaa Jijjiiri:</h4>
@@ -446,11 +463,11 @@
 
           <div class="bg-brand-dark p-4 rounded-2xl border border-brand-gold/30">
             <h4 class="font-bold text-brand-gold mb-3">Barreeffama Simannaa & Bilbila Jijjiiri:</h4>
-            <label class="block text-gray-400 mb-1">Mata Duree Simannaa (Hero Title):</label>
+            <label class="block text-slate-300 mb-1">Mata Duree Simannaa (Hero Title):</label>
             <input type="text" id="editHeroTitle" class="w-full bg-brand-card border border-gray-700 rounded-xl p-2 text-white mb-3">
-            <label class="block text-gray-400 mb-1">Ibsa Simannaa (Hero Description):</label>
+            <label class="block text-slate-300 mb-1">Ibsa Simannaa (Hero Description):</label>
             <textarea id="editHeroDesc" rows="2" class="w-full bg-brand-card border border-gray-700 rounded-xl p-2 text-white mb-3"></textarea>
-            <label class="block text-gray-400 mb-1">Bilbila Mana Nyaataa:</label>
+            <label class="block text-slate-300 mb-1">Bilbila Mana Nyaataa:</label>
             <input type="text" id="editPhone" class="w-full bg-brand-card border border-gray-700 rounded-xl p-2 text-white">
           </div>
 
@@ -465,27 +482,48 @@
     <div class="bg-brand-card border border-brand-gold/40 rounded-3xl max-w-sm w-full p-5 shadow-2xl">
       <h4 class="text-sm font-bold text-brand-gold mb-3">Nyaata Kana Edit Godhaa:</h4>
       <input type="hidden" id="editDishId">
-      <label class="block text-[11px] text-gray-400 mb-1">Maqaa (Afaan Oromoo):</label>
+      <label class="block text-[11px] text-slate-300 mb-1">Maqaa (Afaan Oromoo):</label>
       <input type="text" id="editDishNameOm" class="w-full bg-brand-dark border border-gray-700 rounded-xl p-2 text-white mb-2 text-xs">
       
-      <label class="block text-[11px] text-gray-400 mb-1">Maqaa (አማርኛ):</label>
+      <label class="block text-[11px] text-slate-300 mb-1">Maqaa (አማርኛ):</label>
       <input type="text" id="editDishNameAm" class="w-full bg-brand-dark border border-gray-700 rounded-xl p-2 text-white mb-2 text-xs">
 
-      <label class="block text-[11px] text-gray-400 mb-1">Maqaa (English):</label>
+      <label class="block text-[11px] text-slate-300 mb-1">Maqaa (English):</label>
       <input type="text" id="editDishNameEn" class="w-full bg-brand-dark border border-gray-700 rounded-xl p-2 text-white mb-2 text-xs">
 
-      <label class="block text-[11px] text-gray-400 mb-1">Gatii (ETB):</label>
+      <label class="block text-[11px] text-slate-300 mb-1">Gatii (ETB):</label>
       <input type="number" id="editDishPriceInput" class="w-full bg-brand-dark border border-gray-700 rounded-xl p-2 text-white mb-2 text-xs">
 
-      <label class="block text-[11px] text-gray-400 mb-1">Qabiyyee (Ingredients - komaadhaan):</label>
+      <label class="block text-[11px] text-slate-300 mb-1">Qabiyyee (Ingredients - komaadhaan):</label>
       <input type="text" id="editDishIngInput" class="w-full bg-brand-dark border border-gray-700 rounded-xl p-2 text-white mb-2 text-xs">
 
-      <label class="block text-[11px] text-gray-400 mb-1">Suuraa Haaraa Upload Godhaa (Optional):</label>
-      <input type="file" id="editDishFileInput" accept="image/*" class="w-full text-gray-400 text-xs mb-3">
+      <label class="block text-[11px] text-slate-300 mb-1">Suuraa Haaraa Upload Godhaa (Optional):</label>
+      <input type="file" id="editDishFileInput" accept="image/*" class="w-full text-slate-300 text-xs mb-3">
 
       <div class="flex gap-2">
-        <button onclick="closeModal('editDishModal')" class="flex-1 py-2 bg-gray-800 text-gray-300 font-bold text-xs rounded-xl">Dhiisi</button>
+        <button onclick="closeModal('editDishModal')" class="flex-1 py-2 bg-gray-800 text-slate-200 font-bold text-xs rounded-xl">Dhiisi</button>
         <button onclick="saveEditedDish()" class="flex-1 py-2 gold-btn font-black text-xs rounded-xl">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: EDIT BANK DETAILS IN-PLACE ================= -->
+  <div id="editBankModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-brand-card border border-brand-gold/40 rounded-3xl max-w-sm w-full p-5 shadow-2xl">
+      <h4 class="text-sm font-bold text-brand-gold mb-3">Baankii Kana Edit Godhaa:</h4>
+      <input type="hidden" id="editBankId">
+      <label class="block text-[11px] text-slate-300 mb-1">Maqaa Baankichaa:</label>
+      <input type="text" id="editBankNameInput" class="w-full bg-brand-dark border border-gray-700 rounded-xl p-2 text-white mb-2 text-xs">
+      
+      <label class="block text-[11px] text-slate-300 mb-1">Maqaa Abbaa Herregaa:</label>
+      <input type="text" id="editBankOwnerInput" class="w-full bg-brand-dark border border-gray-700 rounded-xl p-2 text-white mb-2 text-xs">
+
+      <label class="block text-[11px] text-slate-300 mb-1">Lakkoofsa Herregaa (Account No):</label>
+      <input type="text" id="editBankAccInput" class="w-full bg-brand-dark border border-gray-700 rounded-xl p-2 text-white mb-3 text-xs font-mono">
+
+      <div class="flex gap-2">
+        <button onclick="closeModal('editBankModal')" class="flex-1 py-2 bg-gray-800 text-slate-200 font-bold text-xs rounded-xl">Dhiisi</button>
+        <button onclick="saveEditedBank()" class="flex-1 py-2 gold-btn font-black text-xs rounded-xl">Save</button>
       </div>
     </div>
   </div>
@@ -497,9 +535,9 @@
         M
       </div>
       <h3 class="text-lg font-bold text-white mb-1">Mana Nyaataa MIJUU</h3>
-      <p class="text-xs text-gray-400 mb-4" id="qrInstruction">QR Code kana scan godhuun daata (interneetii) malee menu banadhaa!</p>
+      <p class="text-xs text-slate-300 mb-4" id="qrInstruction">QR Code kana scan godhuun daata (interneetii) malee menu banadhaa!</p>
       <div id="qrcode" class="p-3 bg-white rounded-2xl inline-block shadow-xl"></div>
-      <p class="text-[11px] text-gray-400 mt-3 font-mono">Offline / Data-Free Ready</p>
+      <p class="text-[11px] text-slate-300 mt-3 font-mono">Offline / Data-Free Ready</p>
       <button onclick="toggleQRModal()" class="mt-4 w-full py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold">Cufi (Close)</button>
     </div>
   </div>
@@ -510,13 +548,13 @@
     const waitstaffPIN = '4548';
     let html5QrScanner = null;
 
-    let siteConfig = JSON.parse(localStorage.getItem('mijuu_config_v7')) || {
+    let siteConfig = JSON.parse(localStorage.getItem('mijuu_config_v8')) || {
       heroTitle: "Baga Nagaan Gara <br/><span class='gold-text'>Mana Nyaataa MIJUU</span> Dhuftan!",
       heroDesc: "Qulqullina aadaa fi dhandhama ammayyaa bakka tokkotti walitti finneerra. Dhandhama qulqulluu qalbii keessan gammachiisu asitti filadhaatii gammadaa!",
       phone: "+251 911 000000"
     };
 
-    const ethiopianBanks = [
+    const defaultBanks = [
       { id: 'cbe', name: 'Commercial Bank of Ethiopia (CBE)', short: 'CBE Birr / CBE', acc: '1000234567891', owner: 'Mana Nyaataa MIJUU' },
       { id: 'telebirr', name: 'Telebirr (Ethio Telecom)', short: 'Telebirr SuperApp', acc: '+251911223344', owner: 'Mana Nyaataa MIJUU' },
       { id: 'coop', name: 'Cooperative Bank of Oromia', short: 'Coopay-Ebirr / Coop', acc: '1029384756102', owner: 'Mana Nyaataa MIJUU' },
@@ -582,10 +620,11 @@
         ingredients: { om: ["Damma Qulqulluu", "Geshoo"], am: ["የተፈጥሮ ማር", "ጌሾ"], en: ["Pure Honey Wine", "Gesho Herbs"] } }
     ];
 
-    let allCategories = JSON.parse(localStorage.getItem('mijuu_categories_v7')) || defaultCategories;
-    let allDishes = JSON.parse(localStorage.getItem('mijuu_dishes_v7')) || defaultDishes;
-    let liveOrders = JSON.parse(localStorage.getItem('mijuu_live_orders_v7')) || [];
-    let dailyLedger = JSON.parse(localStorage.getItem('mijuu_daily_ledger_v7')) || [];
+    let allBanks = JSON.parse(localStorage.getItem('mijuu_banks_v8')) || defaultBanks;
+    let allCategories = JSON.parse(localStorage.getItem('mijuu_categories_v8')) || defaultCategories;
+    let allDishes = JSON.parse(localStorage.getItem('mijuu_dishes_v8')) || defaultDishes;
+    let liveOrders = JSON.parse(localStorage.getItem('mijuu_live_orders_v8')) || [];
+    let dailyLedger = JSON.parse(localStorage.getItem('mijuu_daily_ledger_v8')) || [];
 
     let currentLang = 'om';
     let currentPage = 'page1';
@@ -813,7 +852,7 @@
           </div>
           <div class="p-5">
             <h3 class="text-lg font-black text-white group-hover:text-brand-gold transition font-serif">${c.name[currentLang] || c.name.om}</h3>
-            <p class="text-xs text-gray-400 mt-1 line-clamp-2">${c.desc[currentLang] || c.desc.om}</p>
+            <p class="text-xs text-slate-300 mt-1 line-clamp-2">${c.desc[currentLang] || c.desc.om}</p>
             <div class="mt-4 flex items-center text-xs text-brand-gold font-bold gap-1">
               <span>${t.viewOrder}</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
             </div>
@@ -853,16 +892,16 @@
           <div class="h-56 w-full relative overflow-hidden cursor-zoom-in" onclick="openLightbox('${item.img}', '${item.name[currentLang] || item.name.om}')">
             <img src="${item.img}" alt="${item.name[currentLang] || item.name.om}" class="w-full h-full object-cover hover:scale-105 transition duration-500">
             <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent pointer-events-none"></div>
-            <span class="absolute top-3 right-3 px-3.5 py-1.5 rounded-full glass bg-black/60 text-brand-gold text-xs font-black shadow-lg">
+            <span class="absolute top-3 right-3 px-3.5 py-1.5 rounded-full glass bg-black/70 text-brand-gold text-xs font-black shadow-lg">
               ${item.price} ETB
             </span>
           </div>
           <div class="p-5 flex-1 flex flex-col justify-between">
             <div>
               <h3 class="font-extrabold text-base text-white mb-2 leading-snug">${item.name[currentLang] || item.name.om}</h3>
-              <div class="bg-brand-dark/80 p-3 rounded-2xl border border-white/5 mb-4">
+              <div class="bg-brand-dark/80 p-3 rounded-2xl border border-white/10 mb-4">
                 <span class="text-[10px] font-bold text-brand-gold uppercase tracking-wider block mb-1">${t.ingredientsLabel}</span>
-                <p class="text-[11px] text-gray-300 leading-relaxed font-light">${ings.join(', ')}</p>
+                <p class="text-[11px] text-slate-200 leading-relaxed font-normal">${ings.join(', ')}</p>
               </div>
             </div>
             <button onclick="openAllergySelector(${item.id})" class="w-full py-2.5 rounded-xl gold-btn text-brand-dark font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:opacity-95 shadow-md">
@@ -883,7 +922,7 @@
       const container = document.getElementById('allergyChecklist');
       container.innerHTML = ings.map(ing => `
         <label class="flex items-center justify-between p-2.5 bg-brand-dark rounded-xl cursor-pointer">
-          <span class="text-gray-200">${ing}</span>
+          <span class="text-slate-100 font-medium">${ing}</span>
           <input type="checkbox" checked value="${ing}" class="allergy-item w-4 h-4 accent-brand-gold">
         </label>
       `).join('');
@@ -910,7 +949,7 @@
         time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       };
       liveOrders.unshift(orderEntry);
-      localStorage.setItem('mijuu_live_orders_v7', JSON.stringify(liveOrders));
+      localStorage.setItem('mijuu_live_orders_v8', JSON.stringify(liveOrders));
       renderWaitstaffOrders();
     }
 
@@ -946,7 +985,7 @@
         <div class="py-2 flex items-center justify-between text-xs">
           <div>
             <p class="font-bold text-white">${item.name[currentLang] || item.name.om}</p>
-            <p class="text-[10px] text-gray-400">Qabiyyee: ${item.chosenIngredients?.join(', ')}</p>
+            <p class="text-[10px] text-slate-300">Qabiyyee: ${item.chosenIngredients?.join(', ')}</p>
             <span class="text-brand-gold font-bold text-[10px]">${item.price} ETB</span>
           </div>
           <button onclick="removeItem(${index})" class="text-red-400 hover:text-red-300 font-bold px-2">✕</button>
@@ -971,17 +1010,17 @@
 
     function renderBanks() {
       const container = document.getElementById('banksList');
-      container.innerHTML = ethiopianBanks.map(b => `
-        <button onclick="selectBank('${b.id}')" class="p-2 rounded-xl bg-brand-dark hover:bg-brand-gold/10 border border-gray-700 hover:border-brand-gold text-left transition flex items-center gap-2">
+      container.innerHTML = allBanks.map(b => `
+        <button onclick="selectBank('${b.id}')" class="p-2.5 rounded-xl bg-brand-dark hover:bg-brand-gold/15 border border-gray-700 hover:border-brand-gold text-left transition flex items-center gap-2">
           <i data-lucide="building-2" class="w-4 h-4 text-brand-gold shrink-0"></i>
-          <span class="text-[10px] font-bold text-gray-200 truncate">${b.short}</span>
+          <span class="text-[10px] font-bold text-slate-100 truncate">${b.short || b.name}</span>
         </button>
       `).join('');
       lucide.createIcons();
     }
 
     function selectBank(bankId) {
-      selectedBank = ethiopianBanks.find(b => b.id === bankId);
+      selectedBank = allBanks.find(b => b.id === bankId);
       const total = cart.reduce((s, i) => s + i.price, 0);
 
       document.getElementById('bankNameDisplay').innerText = selectedBank.name;
@@ -1064,7 +1103,7 @@
     function switchWaitstaffTab(tab) {
       ['orders', 'pos', 'ledger', 'scanner'].forEach(t => {
         document.getElementById(`wsTab${t.charAt(0).toUpperCase() + t.slice(1)}`).classList.add('hidden');
-        document.getElementById(`wsTabBtn${t.charAt(0).toUpperCase() + t.slice(1)}`).className = 'py-2 rounded-lg text-gray-400 hover:text-white';
+        document.getElementById(`wsTabBtn${t.charAt(0).toUpperCase() + t.slice(1)}`).className = 'py-2 rounded-lg text-slate-400 hover:text-white';
       });
       document.getElementById(`wsTab${tab.charAt(0).toUpperCase() + tab.slice(1)}`).classList.remove('hidden');
       document.getElementById(`wsTabBtn${tab.charAt(0).toUpperCase() + tab.slice(1)}`).className = 'py-2 rounded-lg bg-blue-600 text-white';
@@ -1072,19 +1111,27 @@
       if (tab === 'scanner') {
         startCameraScanner();
       } else if (html5QrScanner) {
-        html5QrScanner.clear();
+        try { html5QrScanner.stop(); } catch(e){}
       }
       lucide.createIcons();
     }
 
+    // BACK CAMERA FOR LIVE SCANNER
     function startCameraScanner() {
       if (!html5QrScanner) {
-        html5QrScanner = new Html5QrcodeScanner("qr-reader", { fps: 10, qrbox: 220 });
+        html5QrScanner = new Html5Qrcode("qr-reader");
       }
-      html5QrScanner.render((decodedText) => {
-        document.getElementById('qrScanResultText').innerText = decodedText;
-        document.getElementById('qrScanResultLink').href = decodedText.startsWith('http') ? decodedText : '#';
-        document.getElementById('qrScanResult').classList.remove('hidden');
+      html5QrScanner.start(
+        { facingMode: "environment" }, // FORCES BACK CAMERA!
+        { fps: 10, qrbox: { width: 220, height: 220 } },
+        (decodedText) => {
+          document.getElementById('qrScanResultText').innerText = decodedText;
+          document.getElementById('qrScanResultLink').href = decodedText.startsWith('http') ? decodedText : '#';
+          document.getElementById('qrScanResult').classList.remove('hidden');
+        },
+        (errorMessage) => {}
+      ).catch(err => {
+        alert("Kaameraa banuu hin dandeenye: " + err);
       });
     }
 
@@ -1097,7 +1144,7 @@
         itemsCount: 1,
         time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       });
-      localStorage.setItem('mijuu_daily_ledger_v7', JSON.stringify(dailyLedger));
+      localStorage.setItem('mijuu_daily_ledger_v8', JSON.stringify(dailyLedger));
       renderDailyLedger();
       alert("Nagaheen scan ta'e milkaa'inaan kuusameera!");
     }
@@ -1106,7 +1153,7 @@
       document.getElementById('liveOrderCount').innerText = liveOrders.length;
       const container = document.getElementById('waitstaffOrdersList');
       if (liveOrders.length === 0) {
-        container.innerHTML = `<p class='text-gray-500 text-center py-4'>Ajajni haaraan hin jiru.</p>`;
+        container.innerHTML = `<p class='text-slate-400 text-center py-4'>Ajajni haaraan hin jiru.</p>`;
         return;
       }
 
@@ -1114,17 +1161,17 @@
         <div class="bg-brand-dark p-3 rounded-2xl border border-gray-800 flex justify-between items-start">
           <div>
             <h5 class="text-white font-bold">${o.dishName} (${o.price} ETB)</h5>
-            <p class="text-gray-400 text-[10px]">Qabiyyee: ${o.ingredients.join(', ')}</p>
-            <span class="text-gray-500 text-[9px]">${o.time}</span>
+            <p class="text-slate-300 text-[10px]">Qabiyyee: ${o.ingredients.join(', ')}</p>
+            <span class="text-slate-400 text-[9px]">${o.time}</span>
           </div>
-          <button onclick="dismissOrder(${idx})" class="px-2.5 py-1 rounded-lg bg-green-600/30 text-green-400 hover:bg-green-600 hover:text-white font-bold text-[10px]">Dhiheessera ✓</button>
+          <button onclick="dismissOrder(${idx})" class="px-2.5 py-1 rounded-lg bg-green-600/30 text-green-300 hover:bg-green-600 hover:text-white font-bold text-[10px]">Dhiheessera ✓</button>
         </div>
       `).join('');
     }
 
     function dismissOrder(idx) {
       liveOrders.splice(idx, 1);
-      localStorage.setItem('mijuu_live_orders_v7', JSON.stringify(liveOrders));
+      localStorage.setItem('mijuu_live_orders_v8', JSON.stringify(liveOrders));
       renderWaitstaffOrders();
     }
 
@@ -1168,7 +1215,7 @@
         itemsCount: wsPosItems.length,
         time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       });
-      localStorage.setItem('mijuu_daily_ledger_v7', JSON.stringify(dailyLedger));
+      localStorage.setItem('mijuu_daily_ledger_v8', JSON.stringify(dailyLedger));
       clearWsPos();
       renderDailyLedger();
       alert("Mallaqichi milkaa'inaan kuusameera!");
@@ -1217,18 +1264,19 @@
         document.getElementById('editPhone').value = siteConfig.phone;
         renderOwnerDishes();
         renderOwnerCategories();
+        renderOwnerBanks();
       } else {
         alert("PIN Abbaa Qabeenyaa Dogoggora!");
       }
     }
 
     function switchOwnerTab(tab) {
-      ['dishes', 'categories', 'general'].forEach(t => {
+      ['dishes', 'categories', 'banks', 'general'].forEach(t => {
         document.getElementById(`ownerTab${t.charAt(0).toUpperCase() + t.slice(1)}`).classList.add('hidden');
-        document.getElementById(`ownerTabBtn${t.charAt(0).toUpperCase() + t.slice(1)}`).className = 'py-2 rounded-lg text-gray-400 hover:text-white';
+        document.getElementById(`ownerTabBtn${t.charAt(0).toUpperCase() + t.slice(1)}`).className = 'py-2 rounded-lg text-slate-300 hover:text-white';
       });
       document.getElementById(`ownerTab${tab.charAt(0).toUpperCase() + tab.slice(1)}`).classList.remove('hidden');
-      document.getElementById(`ownerTabBtn${tab.charAt(0).toUpperCase() + tab.slice(1)}`).className = 'py-2 rounded-lg bg-brand-gold text-brand-dark';
+      document.getElementById(`ownerTabBtn${tab.charAt(0).toUpperCase() + tab.slice(1)}`).className = 'py-2 rounded-lg bg-brand-gold text-brand-dark font-black';
       lucide.createIcons();
     }
 
@@ -1245,7 +1293,7 @@
       siteConfig.heroTitle = document.getElementById('editHeroTitle').value;
       siteConfig.heroDesc = document.getElementById('editHeroDesc').value;
       siteConfig.phone = document.getElementById('editPhone').value;
-      localStorage.setItem('mijuu_config_v7', JSON.stringify(siteConfig));
+      localStorage.setItem('mijuu_config_v8', JSON.stringify(siteConfig));
 
       document.getElementById('heroTitle').innerHTML = siteConfig.heroTitle;
       document.getElementById('heroDesc').innerText = siteConfig.heroDesc;
@@ -1253,6 +1301,7 @@
       closeModal('ownerModal');
     }
 
+    // DISHES CONTROL
     function ownerAddDish() {
       const nameOm = document.getElementById('newDishNameOm').value.trim();
       const nameAm = document.getElementById('newDishNameAm').value.trim() || nameOm;
@@ -1274,7 +1323,7 @@
           ingredients: { om: ings, am: ings, en: ings }
         };
         allDishes.unshift(newD);
-        localStorage.setItem('mijuu_dishes_v7', JSON.stringify(allDishes));
+        localStorage.setItem('mijuu_dishes_v8', JSON.stringify(allDishes));
         alert("Nyaanni haaraan dabalameera!");
         renderOwnerDishes();
         renderDishes();
@@ -1301,41 +1350,16 @@
             </div>
           </div>
           <div class="flex gap-1.5">
-            <button onclick="openEditDishModal(${d.id})" class="p-1.5 rounded-lg bg-blue-600/30 text-blue-400 hover:bg-blue-600 hover:text-white">
+            <button onclick="openEditDishModal(${d.id})" class="p-1.5 rounded-lg bg-blue-600/30 text-blue-300 hover:bg-blue-600 hover:text-white">
               <i data-lucide="edit-3" class="w-3.5 h-3.5"></i>
             </button>
-            <button onclick="ownerDeleteDish(${idx})" class="p-1.5 rounded-lg bg-red-600/30 text-red-400 hover:bg-red-600 hover:text-white">
+            <button onclick="ownerDeleteDish(${idx})" class="p-1.5 rounded-lg bg-red-600/30 text-red-300 hover:bg-red-600 hover:text-white">
               <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
             </button>
           </div>
         </div>
       `).join('');
       lucide.createIcons();
-    }
-
-    function renderOwnerCategories() {
-      const container = document.getElementById('ownerCategoriesList');
-      container.innerHTML = allCategories.map((c, idx) => `
-        <div class="bg-brand-card p-2.5 rounded-xl border border-gray-700 flex justify-between items-center">
-          <div>
-            <span class="font-bold text-white">${c.name[currentLang] || c.name.om}</span>
-            <p class="text-[10px] text-gray-400">${c.desc[currentLang] || c.desc.om}</p>
-          </div>
-          <button onclick="editCategoryPrompt(${idx})" class="px-2 py-1 bg-brand-gold/20 text-brand-gold rounded font-bold text-[10px]">Edit</button>
-        </div>
-      `).join('');
-    }
-
-    function editCategoryPrompt(idx) {
-      const cat = allCategories[idx];
-      const newName = prompt("Maqaa Gosaa Haaraa:", cat.name[currentLang] || cat.name.om);
-      if (newName) {
-        cat.name[currentLang] = newName;
-        cat.name.om = newName;
-        localStorage.setItem('mijuu_categories_v7', JSON.stringify(allCategories));
-        renderOwnerCategories();
-        renderCategories();
-      }
     }
 
     function openEditDishModal(dishId) {
@@ -1369,7 +1393,7 @@
       dish.ingredients = { om: ings, am: ings, en: ings };
 
       const finishSave = () => {
-        localStorage.setItem('mijuu_dishes_v7', JSON.stringify(allDishes));
+        localStorage.setItem('mijuu_dishes_v8', JSON.stringify(allDishes));
         alert("Nyaanni kun milkaa'inaan haaromeera!");
         closeModal('editDishModal');
         renderOwnerDishes();
@@ -1391,12 +1415,122 @@
     function ownerDeleteDish(idx) {
       if (confirm("Nyaata kana menu keessaa balleessuu barbaadduu?")) {
         allDishes.splice(idx, 1);
-        localStorage.setItem('mijuu_dishes_v7', JSON.stringify(allDishes));
+        localStorage.setItem('mijuu_dishes_v8', JSON.stringify(allDishes));
         renderOwnerDishes();
         renderDishes();
       }
     }
 
+    // CATEGORIES CONTROL
+    function renderOwnerCategories() {
+      const container = document.getElementById('ownerCategoriesList');
+      container.innerHTML = allCategories.map((c, idx) => `
+        <div class="bg-brand-card p-2.5 rounded-xl border border-gray-700 flex justify-between items-center">
+          <div>
+            <span class="font-bold text-white">${c.name[currentLang] || c.name.om}</span>
+            <p class="text-[10px] text-slate-300">${c.desc[currentLang] || c.desc.om}</p>
+          </div>
+          <button onclick="editCategoryPrompt(${idx})" class="px-2 py-1 bg-brand-gold/20 text-brand-gold rounded font-bold text-[10px]">Edit</button>
+        </div>
+      `).join('');
+    }
+
+    function editCategoryPrompt(idx) {
+      const cat = allCategories[idx];
+      const newName = prompt("Maqaa Gosaa Haaraa:", cat.name[currentLang] || cat.name.om);
+      if (newName) {
+        cat.name[currentLang] = newName;
+        cat.name.om = newName;
+        localStorage.setItem('mijuu_categories_v8', JSON.stringify(allCategories));
+        renderOwnerCategories();
+        renderCategories();
+      }
+    }
+
+    // BANKS CONTROL (NEW: Full Editability for Banks)
+    function renderOwnerBanks() {
+      const container = document.getElementById('ownerBanksList');
+      container.innerHTML = allBanks.map((b, idx) => `
+        <div class="bg-brand-card p-2.5 rounded-xl flex items-center justify-between border border-gray-700">
+          <div>
+            <p class="font-bold text-white">${b.short || b.name}</p>
+            <p class="text-[10px] text-slate-300">${b.owner} • <span class="font-mono text-yellow-300">${b.acc}</span></p>
+          </div>
+          <div class="flex gap-1.5">
+            <button onclick="openEditBankModal(${idx})" class="p-1.5 rounded-lg bg-blue-600/30 text-blue-300 hover:bg-blue-600 hover:text-white">
+              <i data-lucide="edit-3" class="w-3.5 h-3.5"></i>
+            </button>
+            <button onclick="ownerDeleteBank(${idx})" class="p-1.5 rounded-lg bg-red-600/30 text-red-300 hover:bg-red-600 hover:text-white">
+              <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    function ownerAddBank() {
+      const name = document.getElementById('newBankName').value.trim();
+      const owner = document.getElementById('newBankOwner').value.trim();
+      const acc = document.getElementById('newBankAcc').value.trim();
+
+      if (!name || !owner || !acc) return alert("Maaloo odeeffannoo baankichaa guutaa!");
+
+      allBanks.push({
+        id: 'bank_' + Date.now(),
+        name: name,
+        short: name,
+        acc: acc,
+        owner: owner
+      });
+      localStorage.setItem('mijuu_banks_v8', JSON.stringify(allBanks));
+      alert("Baankiin haaraan milkaa'inaan dabalameera!");
+      document.getElementById('newBankName').value = '';
+      document.getElementById('newBankOwner').value = '';
+      document.getElementById('newBankAcc').value = '';
+      renderOwnerBanks();
+      renderBanks();
+    }
+
+    function openEditBankModal(idx) {
+      const b = allBanks[idx];
+      document.getElementById('editBankId').value = idx;
+      document.getElementById('editBankNameInput').value = b.name;
+      document.getElementById('editBankOwnerInput').value = b.owner;
+      document.getElementById('editBankAccInput').value = b.acc;
+      document.getElementById('editBankModal').classList.remove('hidden');
+    }
+
+    function saveEditedBank() {
+      const idx = parseInt(document.getElementById('editBankId').value);
+      const name = document.getElementById('editBankNameInput').value.trim();
+      const owner = document.getElementById('editBankOwnerInput').value.trim();
+      const acc = document.getElementById('editBankAccInput').value.trim();
+
+      if (!name || !owner || !acc) return alert("Odeeffannoo guutaa!");
+
+      allBanks[idx].name = name;
+      allBanks[idx].short = name;
+      allBanks[idx].owner = owner;
+      allBanks[idx].acc = acc;
+
+      localStorage.setItem('mijuu_banks_v8', JSON.stringify(allBanks));
+      alert("Baankichi milkaa'inaan haaromeera!");
+      closeModal('editBankModal');
+      renderOwnerBanks();
+      renderBanks();
+    }
+
+    function ownerDeleteBank(idx) {
+      if (confirm("Baankii kana balleessuu barbaadduu?")) {
+        allBanks.splice(idx, 1);
+        localStorage.setItem('mijuu_banks_v8', JSON.stringify(allBanks));
+        renderOwnerBanks();
+        renderBanks();
+      }
+    }
+
+    // QR CODE MODAL
     function toggleQRModal() {
       const m = document.getElementById('qrModal');
       m.classList.toggle('hidden');
