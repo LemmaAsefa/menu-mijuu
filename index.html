@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MI'JUU | Cultural & Modern Dining</title>
+  <title>MIJUU | Cultural & Modern Dining</title>
   
   <!-- Tailwind CSS & Fonts -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -50,25 +50,25 @@
   <!-- ================= TOP NAVIGATION ================= -->
   <nav class="sticky top-0 z-50 glass bg-gray-900/85 border-b border-brand-gold/20 px-4 py-3 flex items-center justify-between">
     <div class="flex items-center space-x-3 cursor-pointer" onclick="navigateTo('page1')">
-      <!-- 3D LUXURY 'M' LOGO -->
-      <div class="w-10 h-10 rounded-2xl gold-btn flex items-center justify-center shadow-lg shadow-brand-gold/20 font-serif font-black text-2xl tracking-tighter transform hover:scale-105 transition">
+      <div class="w-10 h-10 rounded-2xl gold-btn flex items-center justify-center shadow-lg shadow-brand-gold/20 font-serif font-black text-2xl tracking-tighter">
         M
       </div>
       <div>
-        <h1 id="navBrandName" class="text-xl font-black font-serif tracking-wider gold-text uppercase leading-none">MI'JUU</h1>
+        <h1 class="text-xl font-black font-serif tracking-wider gold-text uppercase leading-none">MI'JUU</h1>
         <span class="text-[9px] text-gray-400 tracking-widest uppercase">Cultural & Modern Cuisine</span>
       </div>
     </div>
 
     <!-- Actions Bar -->
     <div class="flex items-center space-x-2">
-      <!-- Feature Toggles Display (Admin Controlled Only) -->
+      <!-- Admin Toggled: Theme Button -->
       <button id="feat-theme-btn" onclick="toggleTheme()" class="hidden p-2 rounded-xl bg-gray-800 text-brand-gold border border-brand-gold/30">
         <i data-lucide="sun-moon" class="w-4 h-4"></i>
       </button>
 
+      <!-- Admin Toggled: Call Waiter -->
       <button id="feat-waiter-btn" onclick="callWaiter()" class="hidden px-2.5 py-1.5 rounded-xl bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 text-xs font-bold flex items-center gap-1">
-        <i data-lucide="bell-ring" class="w-3.5 h-3.5 animate-bounce"></i> <span id="txt-waiter">Kootoo</span>
+        <i data-lucide="bell-ring" class="w-3.5 h-3.5 animate-bounce"></i> <span>Kootoo</span>
       </button>
 
       <!-- Language Selector -->
@@ -83,14 +83,32 @@
         <i data-lucide="calculator" class="w-4 h-4"></i>
       </button>
 
-      <!-- Secret Admin Entry (No Hint on Screen) -->
+      <!-- Admin Entry (Zero Hint Text) -->
       <button onclick="openAdminModal()" title="Admin Control" class="p-2 rounded-xl bg-brand-gold/10 text-brand-gold border border-brand-gold/30">
         <i data-lucide="shield-check" class="w-4 h-4"></i>
       </button>
     </div>
   </nav>
 
-  <!-- ================= PAGE 1: SIMANNAA AJAA'IBAA ================= -->
+  <!-- ================= STORY / PROMO (Admin Controlled) ================= -->
+  <div id="feat-story-section" class="hidden max-w-6xl mx-auto px-4 pt-4 overflow-x-auto hide-scrollbar">
+    <div class="flex gap-4">
+      <div class="flex flex-col items-center gap-1 cursor-pointer" onclick="alert('Ispeeshala Har\'aa: Kitfoo aadaa kootchoo fi ayiibaan!')">
+        <div class="w-14 h-14 rounded-full p-0.5 border-2 border-brand-gold">
+          <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=150&q=80" class="w-full h-full object-cover rounded-full">
+        </div>
+        <span class="text-[10px] text-gray-300">Ispeeshala</span>
+      </div>
+      <div class="flex flex-col items-center gap-1 cursor-pointer" onclick="alert('Buna Aadaa: Jabanatti affeelamee aarsaa ixaanaatiin kan dhihaatu.')">
+        <div class="w-14 h-14 rounded-full p-0.5 border-2 border-brand-gold">
+          <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=150&q=80" class="w-full h-full object-cover rounded-full">
+        </div>
+        <span class="text-[10px] text-gray-300">Buna Aadaa</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= PAGE 1: SIMANNAA (NO TABLE SELECTOR, NO CART) ================= -->
   <section id="page1" class="min-h-[82vh] flex flex-col justify-center items-center text-center px-4 relative overflow-hidden">
     <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass bg-gray-900/60 border border-brand-gold/40 text-brand-gold text-xs font-bold tracking-widest uppercase mb-6 animate-pulse">
       <i data-lucide="sparkles" class="w-4 h-4"></i>
@@ -157,7 +175,7 @@
     <div id="dishGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
   </section>
 
-  <!-- ================= FLOATING TRAY BAR (Only visible if Cart has items & Not on Page 1) ================= -->
+  <!-- ================= FLOATING TRAY BAR (NEVER ON PAGE 1) ================= -->
   <div id="trayBar" class="fixed bottom-4 left-4 right-4 max-w-md mx-auto glass bg-gray-900/95 p-3.5 rounded-2xl shadow-2xl hidden items-center justify-between z-50 border border-brand-gold/30">
     <div class="flex items-center space-x-3 cursor-pointer" onclick="openOrderSummary()">
       <div class="w-10 h-10 rounded-xl gold-btn flex items-center justify-center font-bold">
@@ -184,6 +202,14 @@
       </div>
 
       <div id="cartItemsList" class="divide-y divide-gray-800 mb-4 border-y border-gray-800 py-2"></div>
+
+      <!-- Promo Code Section -->
+      <div id="feat-promo-box" class="hidden mb-4">
+        <div class="flex gap-2">
+          <input type="text" id="promoInput" placeholder="Koodii Hir'isaa (Promo Code)" class="flex-1 bg-brand-dark border border-gray-700 rounded-xl p-2 text-xs text-white uppercase">
+          <button onclick="applyPromo()" class="px-4 py-2 bg-brand-gold/20 text-brand-gold border border-brand-gold/40 rounded-xl font-bold text-xs">Fayyadami</button>
+        </div>
+      </div>
 
       <div class="space-y-1.5 text-xs text-gray-300 mb-5 bg-brand-dark/70 p-4 rounded-2xl border border-white/5">
         <div class="flex justify-between"><span>Gatii Nyaataa:</span> <span id="billSubtotal" class="font-bold text-white">0 ETB</span></div>
@@ -237,8 +263,8 @@
           <i data-lucide="check-circle" class="w-10 h-10"></i>
         </div>
         <h4 class="text-xl font-bold text-white font-serif mb-1">Kaffaltiin Milkaa'eera!</h4>
-        <p class="text-xs text-gray-300 max-w-xs mx-auto mb-4" id="txt-thankyou">
-          Galatoomaa! Nyaanni keessan yeroo muraasa keessatti qophaa'ee minjaala keessanitti dhihaata. Mana Nyaataa MI'JUU waan filattaniif baay'ee galatoomaa!
+        <p class="text-xs text-gray-300 max-w-xs mx-auto mb-4">
+          Galatoomaa! Nyaanni keessan yeroo muraasa keessatti qophaa'ee dhihaata. Mana Nyaataa MI'JUU waan filattaniif baay'ee galatoomaa!
         </p>
         <div class="bg-brand-dark p-3 rounded-xl text-xs text-left max-w-xs mx-auto mb-4 border border-white/5 space-y-1">
           <p class="text-gray-400">Ref Code: <span id="receiptRef" class="text-yellow-400 font-mono font-bold"></span></p>
@@ -293,7 +319,7 @@
         <h3 class="text-xl font-bold text-white font-serif">Koompiitara Admin (MI'JUU)</h3>
       </div>
 
-      <!-- PIN Input (Completely secret, no hint text) -->
+      <!-- PIN Input (Completely secret, zero hint) -->
       <div id="adminAuthSection">
         <p class="text-xs text-gray-400 mb-3">Koodii Icciitii (Admin PIN):</p>
         <div class="flex gap-2 mb-3">
@@ -302,7 +328,7 @@
         </div>
       </div>
 
-      <!-- Admin Dashboard (Unlocked via PIN) -->
+      <!-- Admin Dashboard -->
       <div id="adminDashboard" class="hidden space-y-6 text-xs">
         
         <!-- 1. CHANGE ADMIN PIN -->
@@ -316,7 +342,7 @@
           </div>
         </div>
 
-        <!-- 2. EDIT SITE TEXTS & BRANDING -->
+        <!-- 2. EDIT SITE TEXTS -->
         <div class="bg-brand-dark p-4 rounded-2xl border border-brand-gold/30">
           <h4 class="font-bold text-brand-gold mb-3 flex items-center gap-1.5">
             <i data-lucide="edit-3" class="w-4 h-4"></i> Barreeffama Simannaa & Teessoo Jijjiiri:
@@ -349,17 +375,18 @@
               <span>Voice Search (Sagaleen Barbaaduu)</span>
               <input type="checkbox" id="toggle-voice" onchange="toggleFeature('voice', this.checked)" class="w-4 h-4 accent-brand-gold">
             </label>
+            <label class="flex items-center justify-between p-2 bg-brand-card rounded-xl">
+              <span>Instagram Story Section</span>
+              <input type="checkbox" id="toggle-story" onchange="toggleFeature('story', this.checked)" class="w-4 h-4 accent-brand-gold">
+            </label>
+            <label class="flex items-center justify-between p-2 bg-brand-card rounded-xl">
+              <span>Promo Code (Koodii Hir'isaa)</span>
+              <input type="checkbox" id="toggle-promo" onchange="toggleFeature('promo', this.checked)" class="w-4 h-4 accent-brand-gold">
+            </label>
           </div>
         </div>
 
-        <!-- 4. EDIT BANK ACCOUNT -->
-        <div class="bg-brand-dark p-4 rounded-2xl border border-gray-800">
-          <h4 class="font-bold text-brand-gold mb-2">Herrega Baankii Daldalaa:</h4>
-          <input type="text" id="adminBankOwner" placeholder="Maqaa Abbaa Account" class="w-full bg-brand-card border border-gray-700 rounded-xl p-2 text-white mb-2">
-          <input type="text" id="adminBankAcc" placeholder="Lakkoofsa Herregaa (Account No)" class="w-full bg-brand-card border border-gray-700 rounded-xl p-2 text-white font-mono">
-        </div>
-
-        <!-- 5. ADD NEW DISH WITH ACCURATE IMAGE -->
+        <!-- 4. ADD NEW DISH -->
         <div class="bg-brand-dark p-4 rounded-2xl border border-gray-800">
           <h4 class="font-bold text-brand-gold mb-2">Nyaata Haaraa Dabaluu:</h4>
           <input type="text" id="adminDishName" placeholder="Maqaa Nyaataa (Afaan Oromoo)" class="w-full bg-brand-card border border-gray-700 rounded-xl p-2 text-white mb-2">
@@ -386,12 +413,19 @@
     </div>
   </div>
 
-  <!-- ================= JAVASCRIPT: ENTERPRISE ENGINE ================= -->
+  <!-- ================= JAVASCRIPT: ENGINE ================= -->
   <script>
+    // AUTO RESET OLD LOCALSTORAGE (Guarantees zero brown bag images!)
+    if (localStorage.getItem('mijuu_v3_ready') !== 'true') {
+      localStorage.removeItem('mijuu_dishes');
+      localStorage.removeItem('mijuu_dishes_v2');
+      localStorage.setItem('mijuu_v3_ready', 'true');
+    }
+
     // 1. PIN & SECURITY (Defaults to 0950)
     let adminPIN = localStorage.getItem('mijuu_pin') || '0950';
 
-    // 2. SITE CONFIG (Editable by Admin)
+    // 2. SITE CONFIG
     let siteConfig = JSON.parse(localStorage.getItem('mijuu_site_config')) || {
       heroTitle: "Baga Nagaan Gara <br/><span class='gold-text'>Mana Nyaataa MI'JUU</span> Dhuftan!",
       heroDesc: "Qulqullina aadaa fi dhandhama ammayyaa bakka tokkotti walitti finneerra. Dhandhama qulqulluu qalbii keessan gammachiisu asitti filadhaatii gammadaa!",
@@ -410,7 +444,7 @@
       { id: 'dashen', name: 'Dashen Bank', short: 'Amole / Dashen', acc: '7281920394857', owner: 'Mana Nyaataa MI\'JUU' }
     ];
 
-    // 4. GOSOOTA NYAATAA (Categories with Authentic Food Images)
+    // 4. GOSOOTA NYAATAA
     const categoriesData = [
       { id: 'ciree', name: { om: "Ciree Ganamaa", am: "የማለዳ ቁርስ", en: "Morning Breakfast" }, desc: { om: "Caccabsaa, Fula, Kinche, Hanqaaquu...", am: "ጨጨብሳ፣ ፉል፣ ቂንጬ...", en: "Chechebsa, Ful, Kinche..." }, img: 'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=700&q=80' },
       { id: 'foon', name: { om: "Foon & Nyaata Aadaa", am: "የስጋና ባህላዊ ምግቦች", en: "Meat & Cultural Delicacies" }, desc: { om: "Kitfoo, Tibsi, Doro Wot, Gored Gored...", am: "ክትፎ፣ ጥብስ፣ የዶሮ ወጥ...", en: "Kitfo, Tibs, Doro Wot..." }, img: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80' },
@@ -420,92 +454,72 @@
       { id: 'dhugaatii_qabbanaawaa', name: { om: "Juusii & Qabbanaawaa", am: "ቀዝቃዛና የተፈጥሮ ጭማቂ", en: "Fresh Fruit Smoothies" }, desc: { om: "Spriss 4-Layers, Avokaadoo, Maangoo...", am: "ስፕሪስ፣ አቮካዶ፣ ማንጎ...", en: "Layered Avocado, Mango & Smoothies..." }, img: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=700&q=80' }
     ];
 
-    // 5. AUTHENTIC FOOD ITEMS (100% REAL FOOD IMAGES - NO BAGS/NON-FOOD)
+    // 5. 100% REAL AUTHENTIC FOOD IMAGES
     const seedDishes = [
       { 
-        id: 1, 
-        cat: 'ciree', 
-        price: 320, 
+        id: 1, cat: 'ciree', price: 320, 
         img: 'https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=700&q=80',
         name: { om: "Caccabsaa Dhadhaa Baaduu & Dammaan", am: "ጨጨብሳ በቅቤና በማር", en: "Chechebsa with Spiced Butter & Honey" },
         ingredients: { om: "Qitaa qamadii bukoome, Dhadhaa baaduu Oromoo, Barbaree sirrii, Damma daggalaa", am: "የስንዴ ቂጣ፣ የኦሮሞ ለጋ ቅቤ፣ ማርና በርበሬ", en: "Pan-toasted wheat flatbread, clarified spiced ghee, wild honey, berbere" } 
       },
       { 
-        id: 2, 
-        cat: 'ciree', 
-        price: 260, 
+        id: 2, cat: 'ciree', price: 260, 
         img: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=700&q=80',
         name: { om: "Fula Ispeeshala (Hanqaaquu & Ayiiba)", am: "ፉል ስፔሻል በእንቁላልና አይብ", en: "Special Ful Medames with Egg" },
         ingredients: { om: "Baqelaa laaffatee soorame, Hanqaaquu, Ayiiba aadaa, Timaatima, Zayita ebla", am: "ፉል፣ እንቁላል፣ እርጎ፣ ቲማቲምና ቃሪያ", en: "Slow-cooked fava beans, hard-boiled farm egg, homemade yogurt, diced tomatoes" } 
       },
       { 
-        id: 3, 
-        cat: 'foon', 
-        price: 980, 
+        id: 3, cat: 'foon', price: 980, 
         img: 'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=700&q=80',
         name: { om: "Kitfoo Ispeeshala (Kootchoo & Ayiibaan)", am: "ልዩ ክትፎ (በቆጮ፣ አይብና ጎመን)", en: "Royal Special Kitfo Platter" },
         ingredients: { om: "Foon loonii quncaa malee, Dhadhaa kororimaa qabu, Mixmitaa, Kootchoo, Ayiiba", am: "ቀይ ስጋ፣ ኮረሪማ፣ የቅቤ ቅመም፣ ሚጥሚጣ፣ አይብና ቆጮ", en: "Minced prime beef tartare, cardamom spiced butter, mitmita, kocho, cottage cheese" } 
       },
       { 
-        id: 4, 
-        cat: 'foon', 
-        price: 840, 
+        id: 4, cat: 'foon', price: 840, 
         img: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80',
         name: { om: "Tibsi Xawaashii Hoolaa (Sizzling)", am: "የበግ ጥብስ በጋለ ምጣድ", en: "Sizzling Rosemary Lamb Tibs" },
         ingredients: { om: "Foon hoolaa laafaa, Qullubbii, Barbaree, Dhadhaa, Roözmeerii aadaa", am: "የለሰለሰ የበግ ስጋ፣ ሽንኩርት፣ ቃሪያ፣ ሮዝመሪ፣ ቅቤ", en: "Tender lamb cubes, shallots, garlic, green chilies, fresh rosemary sprigs, niter kibbeh" } 
       },
       { 
-        id: 5, 
-        cat: 'foon', 
-        price: 1150, 
+        id: 5, cat: 'foon', price: 1150, 
         img: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=700&q=80',
         name: { om: "Doro Wot Aadaa (Lukkuu fi Hanqaaquun)", am: "የሀበሻ ዶሮ ወጥ በቅቤ", en: "Heirloom Festive Doro Wot" },
         ingredients: { om: "Foon lukkuu biyyaa, Qullubbii sa'aatii 5 bilchaate, Barbaree, Dhadhaa, Hanqaaquu", am: "የሀገር ዶሮ፣ ቀይ ሽንኩርት፣ የደበረ በርበሬ፣ ቅቤ እና የበሰለ እንቁላል", en: "Organic chicken, slow-simmered onion gravy, heirloom berbere, spiced butter, boiled eggs" } 
       },
       { 
-        id: 6, 
-        cat: 'soomii', 
-        price: 460, 
+        id: 6, cat: 'soomii', price: 460, 
         img: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=700&q=80',
         name: { om: "Beyaynetu Soomii Qulqulluu (Gosa 12)", am: "የፆም በያይነቱ (12 ዓይነት)", en: "Royal Vegan Beyaynetu Combo" },
         ingredients: { om: "Miseera diimaa, Alchaa, Shiroo suphee, Raafuu, Timaatima, Atara", am: "የምስር ክክ፣ ክክ አልጫ፣ ሽሮ፣ ጎመን፣ ድንችና ካሮት", en: "Misir Wot red lentils, Kik Alicha yellow split peas, Gomen greens, Shiro, teff injera" } 
       },
       { 
-        id: 7, 
-        cat: 'soomii', 
-        price: 340, 
+        id: 7, cat: 'soomii', price: 340, 
         img: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=700&q=80',
         name: { om: "Shiroo Tagamino Huboo Supheetiin", am: "ሽሮ ተጋቢኖ በሸክላ ድስት", en: "Clay-Pot Bubbling Shiro Tagamino" },
         ingredients: { om: "Daakuu shiroo baqelaa, Qullubbii adii, Zayita ebla, Barbaree qaraa", am: "የተፈተገ የሽሮ ዱቄት፣ ነጭ ሽንኩርት፣ ዘይት፣ ቃሪያ", en: "Chickpea purée simmered with minced shallots, garlic, and hot pepper in earthen clay" } 
       },
       { 
-        id: 8, 
-        cat: 'fastfood', 
-        price: 490, 
+        id: 8, cat: 'fastfood', price: 490, 
         img: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80',
         name: { om: "Mi'juu Double Cheese Burger + Fries", am: "ቺዝ በርገር ከቺፕስ ጋር", en: "Gourmet Beef Burger + Crispy Fries" },
         ingredients: { om: "Foon loonii filatame, Ayiiba cheddar baqe, Timaatima, Salaaxaa, Chiipsii", am: "ጥራት ያለው የበሬ ስጋ፣ አይብ፣ ሰላጣ፣ ቲማቲምና ጥብስ ድንች", en: "Handcrafted juicy beef patty, melted cheddar slice, crisp lettuce, golden fries" } 
       },
       { 
-        id: 9, 
-        cat: 'dhugaatii_hoaa', 
-        price: 70, 
+        id: 9, cat: 'dhugaatii_hoaa', price: 70, 
         img: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=700&q=80',
         name: { om: "Buna Jabanaa Oromoo (Aarsaa Aadaatiin)", am: "የጀበና ቡና በዕጣን ታጅቦ", en: "Traditional Jebena Coffee Ceremony" },
         ingredients: { om: "Firiin buna Harar/Jimmaa tumame, Aarsaa ixaana aadaa", am: "ትኩስ የተቆላና የተወቀጠ ቡና፣ ጥራት ያለው ዕጣን", en: "Pan-roasted Ethiopian coffee beans brewed in a clay kettle with natural frankincense" } 
       },
       { 
-        id: 10, 
-        cat: 'dhugaatii_qabbanaawaa', 
-        price: 240, 
+        id: 10, cat: 'dhugaatii_qabbanaawaa', price: 240, 
         img: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=700&q=80',
         name: { om: "Juusii Ispeeshala (Spriss 4 Layer)", am: "ስፕሪስ ጭማቂ (አቮካዶ፣ ማንጎ፣ ፓፓያ)", en: "Signature 4-Layer Fresh Fruit Spriss" },
         ingredients: { om: "Avokaadoo baaduu, Maangoo, Paapaayyaa, Damma Oromoo, Lomiicha", am: "ለስላሳ አቮካዶ፣ የበሰለ ማንጎ፣ ፓፓያ፣ የተፈጥሮ ማር እና ሎሚ", en: "Fresh avocado, sweet mango, papaya puree layered with forest honey and lime" } 
       }
     ];
 
-    // SCALABLE DISHES ARRAY
-    let allDishes = JSON.parse(localStorage.getItem('mijuu_dishes_v2')) || [];
+    // SCALABLE DISHES ENGINE
+    let allDishes = JSON.parse(localStorage.getItem('mijuu_dishes_v3')) || [];
     if (allDishes.length < 50) {
       allDishes = [];
       let dishId = 1;
@@ -523,7 +537,7 @@
           dishId++;
         });
       }
-      localStorage.setItem('mijuu_dishes_v2', JSON.stringify(allDishes));
+      localStorage.setItem('mijuu_dishes_v3', JSON.stringify(allDishes));
     }
 
     // STATE
@@ -534,12 +548,15 @@
     let selectedBank = null;
     let posTotalAmount = 0;
     let posItems = [];
+    let discountApplied = 0;
 
-    // FEATURE TOGGLES (Admin Controlled Only)
+    // FEATURE TOGGLES
     let features = JSON.parse(localStorage.getItem('mijuu_features')) || {
       theme: false,
       waiter: false,
-      voice: false
+      voice: false,
+      story: false,
+      promo: false
     };
 
     function applyFeatureToggles() {
@@ -547,10 +564,14 @@
       document.getElementById('feat-waiter-btn').classList.toggle('hidden', !features.waiter);
       document.getElementById('feat-voice-cat').classList.toggle('hidden', !features.voice);
       document.getElementById('feat-voice-dish').classList.toggle('hidden', !features.voice);
+      document.getElementById('feat-story-section').classList.toggle('hidden', !features.story);
+      document.getElementById('feat-promo-box').classList.toggle('hidden', !features.promo);
 
       document.getElementById('toggle-theme').checked = features.theme;
       document.getElementById('toggle-waiter').checked = features.waiter;
       document.getElementById('toggle-voice').checked = features.voice;
+      document.getElementById('toggle-story').checked = features.story;
+      document.getElementById('toggle-promo').checked = features.promo;
     }
 
     function toggleFeature(key, val) {
@@ -560,7 +581,7 @@
       lucide.createIcons();
     }
 
-    // TRANSLATIONS DICTIONARY
+    // TRANSLATIONS
     const langDict = {
       om: {
         badge: "Dhandhama Addaa & Mi'aawaa",
@@ -572,8 +593,7 @@
         addBtn: "Ajajadhu / Filadhu",
         cartTitle: "Waan filatame:",
         receiptHead: "Herrega Nyaataa & Kaffaltii",
-        chooseBank: "1. Baankii Kaffaltii Filadhu:",
-        waiterText: "Kootoo"
+        chooseBank: "1. Baankii Kaffaltii Filadhu:"
       },
       am: {
         badge: "ልዩና ማራኪ ጣዕም",
@@ -585,8 +605,7 @@
         addBtn: "እዘዝ / ምረጥ",
         cartTitle: "የመረጡት:",
         receiptHead: "የምግብ ሂሳብ እና ክፍያ",
-        chooseBank: "1. መክፈል የሚፈልጉትን ባንክ ይምረጡ:",
-        waiterText: "አስተናጋጅ"
+        chooseBank: "1. መክፈል የሚፈልጉትን ባንክ ይምረጡ:"
       },
       en: {
         badge: "Exquisite & Authentic Taste",
@@ -598,12 +617,11 @@
         addBtn: "Add to Order",
         cartTitle: "Selected items:",
         receiptHead: "Dining Bill & Payment",
-        chooseBank: "1. Select Payment Bank:",
-        waiterText: "Call Waiter"
+        chooseBank: "1. Select Payment Bank:"
       }
     };
 
-    // NAVIGATION SYSTEM
+    // PAGE NAVIGATION
     function navigateTo(pageId) {
       currentPage = pageId;
       document.getElementById('page1').classList.add('hidden');
@@ -611,7 +629,7 @@
       document.getElementById('page3').classList.add('hidden');
       document.getElementById(pageId).classList.remove('hidden');
 
-      // CRITICAL FIX: Hide Floating Tray Bar on Page 1 completely!
+      // Floating tray is completely hidden on Page 1!
       updateCartDisplay();
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -630,7 +648,6 @@
       document.getElementById('txt-cart-title').innerText = t.cartTitle;
       document.getElementById('txt-receipt-head').innerText = t.receiptHead;
       document.getElementById('txt-choose-bank').innerText = t.chooseBank;
-      document.getElementById('txt-waiter').innerText = t.waiterText;
 
       renderCategories();
       if (!document.getElementById('page3').classList.contains('hidden')) {
@@ -639,7 +656,7 @@
       lucide.createIcons();
     }
 
-    // PAGE 2: CATEGORY RENDERING
+    // PAGE 2: CATEGORIES
     function renderCategories() {
       const q = document.getElementById('catSearch').value.toLowerCase();
       const grid = document.getElementById('categoryGrid');
@@ -674,7 +691,7 @@
       renderDishes();
     }
 
-    // PAGE 3: DISH RENDERING
+    // PAGE 3: DISHES
     function renderDishes() {
       const q = document.getElementById('dishSearch').value.toLowerCase();
       const grid = document.getElementById('dishGrid');
@@ -709,7 +726,7 @@
       lucide.createIcons();
     }
 
-    // CART & TRAY MANAGEMENT
+    // CART LOGIC
     function addToCart(dishId) {
       const item = allDishes.find(d => d.id === dishId);
       if (item) {
@@ -720,7 +737,6 @@
 
     function updateCartDisplay() {
       const tray = document.getElementById('trayBar');
-      // Only show tray if NOT on page 1 AND cart has at least 1 item!
       if (currentPage === 'page1' || cart.length === 0) {
         tray.classList.add('hidden');
         tray.classList.remove('flex');
@@ -730,8 +746,8 @@
       }
 
       document.getElementById('cartCount').innerText = cart.length;
-      const total = cart.reduce((s, i) => s + i.price, 0);
-      document.getElementById('cartTotal').innerText = total.toLocaleString();
+      const total = cart.reduce((s, i) => s + i.price, 0) - discountApplied;
+      document.getElementById('cartTotal').innerText = Math.max(0, total).toLocaleString();
     }
 
     function openOrderSummary() {
@@ -748,8 +764,10 @@
         </div>
       `).join('');
 
-      const total = cart.reduce((s, i) => s + i.price, 0);
-      document.getElementById('billSubtotal').innerText = `${total.toLocaleString()} ETB`;
+      const subtotal = cart.reduce((s, i) => s + i.price, 0);
+      const total = Math.max(0, subtotal - discountApplied);
+
+      document.getElementById('billSubtotal').innerText = `${subtotal.toLocaleString()} ETB`;
       document.getElementById('billTotal').innerText = `${total.toLocaleString()} ETB`;
       
       renderBanks();
@@ -762,6 +780,17 @@
       updateCartDisplay();
       if (cart.length === 0) closeModal('orderModal');
       else openOrderSummary();
+    }
+
+    function applyPromo() {
+      const code = document.getElementById('promoInput').value.trim();
+      if (code.toUpperCase() === "MIJUU10") {
+        discountApplied = 50;
+        alert("Koodiin 'MIJUU10' milkaa'eera! 50 ETB hir'ateera.");
+        openOrderSummary();
+      } else {
+        alert("Koodii dogoggora!");
+      }
     }
 
     function renderBanks() {
@@ -777,12 +806,12 @@
 
     function selectBank(bankId) {
       selectedBank = ethiopianBanks.find(b => b.id === bankId);
-      const total = cart.reduce((s, i) => s + i.price, 0);
+      const total = cart.reduce((s, i) => s + i.price, 0) - discountApplied;
 
       document.getElementById('bankNameDisplay').innerText = selectedBank.name;
       document.getElementById('bankOwnerDisplay').innerText = selectedBank.owner;
       document.getElementById('bankAccDisplay').innerText = selectedBank.acc;
-      document.getElementById('bankAmountDisplay').innerText = `${total.toLocaleString()} ETB`;
+      document.getElementById('bankAmountDisplay').innerText = `${Math.max(0, total).toLocaleString()} ETB`;
 
       document.getElementById('bankDetailsCard').classList.remove('hidden');
       lucide.createIcons();
@@ -809,7 +838,7 @@
         return;
       }
 
-      const total = cart.reduce((s, i) => s + i.price, 0);
+      const total = cart.reduce((s, i) => s + i.price, 0) - discountApplied;
 
       document.getElementById('bankSection').classList.add('hidden');
       document.getElementById('bankDetailsCard').classList.add('hidden');
@@ -817,13 +846,14 @@
       document.getElementById('cartItemsList').classList.add('hidden');
 
       document.getElementById('receiptRef').innerText = tx.toUpperCase();
-      document.getElementById('receiptPaid').innerText = `${total.toLocaleString()} ETB`;
+      document.getElementById('receiptPaid').innerText = `${Math.max(0, total).toLocaleString()} ETB`;
       document.getElementById('successReceipt').classList.remove('hidden');
       lucide.createIcons();
     }
 
     function resetOrder() {
       cart = [];
+      discountApplied = 0;
       updateCartDisplay();
       closeModal('orderModal');
       navigateTo('page1');
@@ -834,7 +864,7 @@
       document.getElementById(id).classList.add('hidden');
     }
 
-    // WAITRESS CALCULATOR
+    // WAITRESS POS
     function toggleWaitressModal() {
       document.getElementById('waitressModal').classList.toggle('hidden');
       renderWaitressDishes();
@@ -871,7 +901,7 @@
       document.getElementById('posSelectedItems').innerHTML = '';
     }
 
-    // ADMIN CONTROL PANEL & PIN MANAGEMENT
+    // ADMIN PIN & ACTIONS
     function openAdminModal() {
       document.getElementById('adminModal').classList.remove('hidden');
       document.getElementById('adminPinInput').value = '';
@@ -884,7 +914,6 @@
         document.getElementById('adminAuthSection').classList.add('hidden');
         document.getElementById('adminDashboard').classList.remove('hidden');
         
-        // Populate inputs
         document.getElementById('editHeroTitle').value = siteConfig.heroTitle;
         document.getElementById('editHeroDesc').value = siteConfig.heroDesc;
         document.getElementById('editPhone').value = siteConfig.phone;
@@ -934,12 +963,11 @@
       };
 
       allDishes.unshift(newDish);
-      localStorage.setItem('mijuu_dishes_v2', JSON.stringify(allDishes));
+      localStorage.setItem('mijuu_dishes_v3', JSON.stringify(allDishes));
       alert("Nyaanni haaraan milkaa'inaan dabalameera!");
       location.reload();
     }
 
-    // EXTRA OPTIONAL ACTIONS
     function toggleTheme() {
       document.body.classList.toggle('bg-white');
       document.body.classList.toggle('text-gray-900');
